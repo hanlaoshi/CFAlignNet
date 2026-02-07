@@ -15,7 +15,7 @@ This is the official PyTorch implementation of the paper: **"CFAlignNet: Knowled
 
 ## 🏗️ Model Architecture
 
-*(Note: Please ensure the image path matches your repository structure)*
+
 
 ## 🛠️ Requirements
 
