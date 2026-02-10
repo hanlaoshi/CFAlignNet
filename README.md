@@ -73,12 +73,12 @@ We evaluate the model on the following 6 real-world datasets. Please place your 
 
 | Dataset | Domain | Variables | Frequency | Prediction Horizons |
 | --- | --- | --- | --- | --- |
-| **City Network** | Network Traffic | 3 | Hourly | 1440, 2640 |
-| **ETTh1** | Energy (Transformer Temp.) | 7 | Hourly | 96, 192, 336, 720 |
-| **ETTh2** | Energy (Transformer Temp.) | 7 | Hourly | 96, 192, 336, 720 |
-| **Residential** | Energy (Residential Load) | 3 | Hourly | 720 |
-| **IoT** | Traffic Flow (IoT Sensor) | 3 | Hourly | 192, 720 |
-| **M5** | Retail Sales | 3 | Daily | 8, 30 |
+| **City Network** | Network Traffic | 3 | Hourly | 192, 720，1440, 2640 |
+| **ETTh1** | Energy (Transformer Temp.) | 7 | Hourly | 192, 720， 1440, 2640|
+| **ETTh2** | Energy (Transformer Temp.) | 7 | Hourly | 192, 720，1440, 2640 |
+| **Residential** | Energy (Residential Load) | 3 | Hourly | 192, 720，1440, 2640 |
+| **IoT** | Traffic Flow (IoT Sensor) | 3 | Hourly | 192, 720， 1440, 2640|
+| **M5** | Retail Sales | 3 | Daily | 8, 30，60，110 |
 
 ## 🚀 Usage
 
