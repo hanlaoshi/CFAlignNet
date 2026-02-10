@@ -11,7 +11,7 @@ llama_layers=12
 
 master_port=29590
 num_process=2
-batch_size=4
+batch_size=8
 d_model=16
 d_ff=32
 llm_model=GPT2
