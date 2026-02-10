@@ -7,18 +7,18 @@
 model_name=CFAlignNet
 train_epochs=100
 learning_rate=0.0001
-llama_layers=16
+llama_layers=12
 
 master_port=29589
 num_process=2
-batch_size=2
+batch_size=8
 d_model=16
 d_ff=32
 llm_model=GPT2
 llm_dim=768
 percent=100
 patch_len=16
-patience=18
+patience=10
 comment='CFAlignNet_residential_data'
 
 export CUDA_VISIBLE_DEVICES=0,1
