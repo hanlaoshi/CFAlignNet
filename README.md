@@ -167,7 +167,6 @@ accelerate launch --multi_gpu --num_processes 2 run.py \
 
 | Methods | Horizon | MSE | MAE |
 | --- | --- | --- | --- |
-| **CFAlignNet** | **1440** | **0.641** | **0.593** |
 | **CFAlignNet** | **2640** | **0.669** | **0.616** |
 | TimeCMA | 2640 | 1.204 | 0.808 |
 | DFGCN | 2640 | 1.073 | 0.704 |
