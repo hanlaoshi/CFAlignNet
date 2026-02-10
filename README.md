@@ -73,12 +73,12 @@ We evaluate the model on the following 6 real-world datasets. Please place your 
 
 | Dataset | Domain | Variables | Frequency | Prediction Horizons |
 | --- | --- | --- | --- | --- |
-| **City Network** | Network Traffic | 3 | Hourly | 192, 720，1440, 2640 |
-| **ETTh1** | Energy (Transformer Temp.) | 7 | Hourly | 192, 720，1440, 2640 |
-| **ETTh2** | Energy (Transformer Temp.) | 7 | Hourly | 192, 720，1440, 2640 |
-| **Residential** | Energy (Residential Load) | 3 | Hourly | 192, 720，1440, 2640 |
-| **IoT** | Traffic Flow (IoT Sensor) | 3 | Hourly | 192, 720，1440, 2640 |
-| **M5** | Retail Sales | 3 | Daily | 8, 30，60，110 |
+| **City Network** | Network Traffic | 3 | Hourly | 1440, 2640 |
+| **ETTh1** | Energy (Transformer Temp.) | 7 | Hourly | 96, 192, 336, 720 |
+| **ETTh2** | Energy (Transformer Temp.) | 7 | Hourly | 96, 192, 336, 720 |
+| **Residential** | Energy (Residential Load) | 3 | Hourly | 720 |
+| **IoT** | Traffic Flow (IoT Sensor) | 3 | Hourly | 192, 720 |
+| **M5** | Retail Sales | 3 | Daily | 8, 30 |
 
 ## 🚀 Usage
 
@@ -150,7 +150,7 @@ accelerate launch --multi_gpu --num_processes 2 run.py \
   --model CFAlignNet \
   --data City_Network \
   --features M \
-  --seq_len 192 \
+  --seq_len 512 \
   --pred_len 1440 \
   --enc_in 3 \
   --dec_in 3 \
@@ -167,6 +167,7 @@ accelerate launch --multi_gpu --num_processes 2 run.py \
 
 | Methods | Horizon | MSE | MAE |
 | --- | --- | --- | --- |
+| **CFAlignNet** | **1440** | **0.641** | **0.593** |
 | **CFAlignNet** | **2640** | **0.669** | **0.616** |
 | TimeCMA | 2640 | 1.204 | 0.808 |
 | DFGCN | 2640 | 1.073 | 0.704 |

@@ -1,0 +1,83 @@
+#!/bin/bash
+# ============================================================
+# CFAlignNet - ETTh1 Dataset
+# ============================================================
+
+# Common parameters
+model_name=CFAlignNet
+train_epochs=100
+learning_rate=0.0001
+llama_layers=16
+
+master_port=29507
+num_process=2
+batch_size=4
+d_model=16
+d_ff=32
+llm_model=GPT2
+llm_dim=768
+percent=100
+patch_len=16
+patience=10
+comment='CFAlignNet_etth1'
+
+export CUDA_VISIBLE_DEVICES=0,1
+
+# Parameter arrays
+pred_len_array=(96 192 336 720 2640)
+seq_len_array=(192)
+
+# Create logs directory
+mkdir -p logs/etth1
+
+# Loop through parameter combinations
+for seq_len in "${seq_len_array[@]}"; do
+  for pred_len in "${pred_len_array[@]}"; do
+    label_len=$((seq_len / 2))
+
+    log_file="logs/etth1/CFAlignNet_seq${seq_len}_pred${pred_len}.txt"
+
+    echo "Running with seq_len=$seq_len, pred_len=$pred_len, label_len=$label_len"
+
+    accelerate launch --multi_gpu --num_processes $num_process --main_process_port $master_port \
+      run.py \
+      --task_name long_term_forecast \
+      --is_training 1 \
+      --root_path ./dataset/ \
+      --data_path ETTh1.csv \
+      --model_id CFAlignNet \
+      --model $model_name \
+      --data ETTh1 \
+      --llm_dim $llm_dim \
+      --patience $patience \
+      --features M \
+      --seq_len $seq_len \
+      --label_len $label_len \
+      --pred_len $pred_len \
+      --percent $percent \
+      --llm_model $llm_model \
+      --patch_len $patch_len \
+      --factor 7 \
+      --enc_in 7 \
+      --dec_in 7 \
+      --c_out 7 \
+      --des 'Exp' \
+      --itr 1 \
+      --holiday_data_path ./dataset/holiday_data_etth.xlsx \
+      --d_model $d_model \
+      --d_ff $d_ff \
+      --batch_size $batch_size \
+      --learning_rate $learning_rate \
+      --llm_layers $llama_layers \
+      --train_epochs $train_epochs \
+      --model_comment "${comment}_seq${seq_len}_pred${pred_len}" | tee $log_file
+
+    echo "Completed run with seq_len=$seq_len, pred_len=$pred_len"
+    echo "Log saved to $log_file"
+    echo "------------------------"
+
+    sleep 2
+  done
+done
+
+echo "All experiments completed."

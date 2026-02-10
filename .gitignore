@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+
+# PyTorch
+*.pth
+*.pt
+checkpoints/
+results/
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (large files)
+dataset/*.csv
+dataset/*.xlsx
+
+# Visualizations
+holiday_predictions/
+figures/*.pdf
