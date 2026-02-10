@@ -24,7 +24,7 @@ comment='CFAlignNet_city_network'
 export CUDA_VISIBLE_DEVICES=0,1
 
 # Parameter arrays
-pred_len_array=(1440 2640)
+pred_len_array=(192 720 1440 2640)
 seq_len_array=(192)
 num_tokens_array=(1000)
 

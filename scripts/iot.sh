@@ -24,7 +24,7 @@ comment='CFAlignNet_iot'
 export CUDA_VISIBLE_DEVICES=0,1
 
 # Parameter arrays
-pred_len_array=(192 720)
+pred_len_array=(192 720 1440 2640)
 seq_len_array=(192)
 
 # Create logs directory
