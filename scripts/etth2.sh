@@ -7,7 +7,7 @@
 model_name=CFAlignNet
 train_epochs=100
 learning_rate=0.0001
-llama_layers=6
+llama_layers=12
 
 master_port=29519
 num_process=2
