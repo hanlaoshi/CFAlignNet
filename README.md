@@ -16,7 +16,7 @@ This is the official PyTorch implementation of the paper: **"CFAlignNet: Knowled
 ## 🏗️ Model Architecture
 
 <p align="center">
-  <img src="figures/architecture.png" alt="CFAlignNet Architecture" width="90%">
+  <img src="figures/architecture.png" alt="CFAlignNet Architecture" width="100%">
 </p>
 
 ## 📁 Repository Structure
@@ -27,7 +27,12 @@ CFAlignNet/
 │   ├── data_factory.py          # Dataset factory and data loading
 │   └── data_loader.py           # Dataset classes for all benchmarks
 ├── dataset/
-│   └── prompt_bank/             # Domain-specific prompt templates
+│   └── citynetwork.csv          # Network Traffic Dataset
+│   └── ETTh1.csv                # Electricity Transformer Temperature Dataset 1
+│   └── ETTh2.csv                # Electricity Transformer Temperature Dataset 2
+│   └── M5.csv                   # Retail Sales Dataset
+│   └── ML_IOT.csv               # Traffic Flow Dataset
+│   └── residensial_data.csv     # Residential Load Dataset
 ├── layers/
 │   ├── Embed.py                 # Patch embedding layer
 │   └── StandardNorm.py          # Reversible instance normalization
