@@ -123,19 +123,18 @@ accelerate launch --multi_gpu --num_processes 2 run.py \
   --model CFAlignNet \
   --data City_Network \
   --features M \
-  --seq_len 512 \
-  --label_len 256 \
+  --seq_len 192 \
   --pred_len 1440 \
   --enc_in 3 \
   --dec_in 3 \
   --c_out 3 \
   --llm_model GPT2 \
   --llm_dim 768 \
-  --llm_layers 16 \
+  --llm_layers 12 \
   --d_model 16 \
   --d_ff 32 \
   --patch_len 16 \
-  --batch_size 2 \
+  --batch_size 8 \
   --learning_rate 0.0001 \
   --train_epochs 100 \
   --patience 10
@@ -155,7 +154,7 @@ accelerate launch --multi_gpu --num_processes 2 run.py \
   --model CFAlignNet \
   --data City_Network \
   --features M \
-  --seq_len 512 \
+  --seq_len 192 \
   --pred_len 1440 \
   --enc_in 3 \
   --dec_in 3 \
