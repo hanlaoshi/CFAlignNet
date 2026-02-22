@@ -44,7 +44,7 @@ for seq_len in "${seq_len_array[@]}"; do
       --task_name long_term_forecast \
       --is_training 1 \
       --root_path ./dataset/ \
-      --data_path residential_data_selected.csv \
+      --data_path residential_data.csv \
       --model_id CFAlignNet \
       --model $model_name \
       --data Residential_data \
@@ -63,7 +63,7 @@ for seq_len in "${seq_len_array[@]}"; do
       --c_out 3 \
       --des 'Exp' \
       --itr 1 \
-      --holiday_data_path ./dataset/holiday_data_transform.xlsx \
+      --holiday_data_path ./dataset/holiday_data_residential.xlsx \
       --d_model $d_model \
       --d_ff $d_ff \
       --batch_size $batch_size \
