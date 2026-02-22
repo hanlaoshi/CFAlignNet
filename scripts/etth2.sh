@@ -17,7 +17,7 @@ d_ff=32
 llm_model=GPT2
 llm_dim=768
 percent=100
-patch_len=24
+patch_len=16
 patience=10
 comment='CFAlignNet_etth2'
 
@@ -72,8 +72,6 @@ for seq_len in "${seq_len_array[@]}"; do
       --llm_layers $llama_layers \
       --train_epochs $train_epochs \
       --lora_r 8 \
-      --lora_alpha 8 \
-      --lora_dropout 0.1 \
       --model_comment "${comment}_seq${seq_len}_pred${pred_len}" | tee $log_file
 
     echo "Completed run with seq_len=$seq_len, pred_len=$pred_len"
