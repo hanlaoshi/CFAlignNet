@@ -18,7 +18,7 @@ llm_model=GPT2
 llm_dim=768
 percent=100
 patch_len=24
-patience=5
+patience=10
 comment='CFAlignNet_etth2'
 
 export CUDA_VISIBLE_DEVICES=0,1
