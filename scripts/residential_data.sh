@@ -61,6 +61,7 @@ for seq_len in "${seq_len_array[@]}"; do
       --enc_in 3 \
       --dec_in 3 \
       --c_out 3 \
+      --lora_r 8 \
       --des 'Exp' \
       --itr 1 \
       --holiday_data_path ./dataset/holiday_data_residential.xlsx \
