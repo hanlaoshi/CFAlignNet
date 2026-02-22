@@ -63,7 +63,6 @@ for seq_len in "${seq_len_array[@]}"; do
       --c_out 3 \
       --des 'Exp' \
       --itr 1 \
-      --holiday_data_path ./dataset/holiday_data_transform.xlsx \
       --d_model $d_model \
       --d_ff $d_ff \
       --batch_size $batch_size \
