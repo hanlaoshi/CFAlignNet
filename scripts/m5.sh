@@ -7,11 +7,11 @@
 model_name=CFAlignNet
 train_epochs=100
 learning_rate=0.0001
-llama_layers=6
+llama_layers=12
 
 master_port=29589
 num_process=2
-batch_size=2
+batch_size=8
 d_model=16
 d_ff=32
 llm_model=GPT2
@@ -64,7 +64,7 @@ for seq_len in "${seq_len_array[@]}"; do
       --c_out 3 \
       --des 'Exp' \
       --itr 1 \
-      --holiday_data_path ./dataset/holiday_m5_enhanced.xlsx \
+      --holiday_data_path ./dataset/holiday_m5.xlsx \
       --d_model $d_model \
       --d_ff $d_ff \
       --batch_size $batch_size \
@@ -72,8 +72,6 @@ for seq_len in "${seq_len_array[@]}"; do
       --llm_layers $llama_layers \
       --train_epochs $train_epochs \
       --lora_r 16 \
-      --lora_alpha 32 \
-      --lora_dropout 0.2 \
       --model_comment "${comment}_seq${seq_len}_pred${pred_len}" | tee $log_file
 
     echo "Completed run with seq_len=$seq_len, pred_len=$pred_len"
