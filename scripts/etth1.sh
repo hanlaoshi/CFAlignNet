@@ -57,6 +57,7 @@ for seq_len in "${seq_len_array[@]}"; do
       --percent $percent \
       --llm_model $llm_model \
       --patch_len $patch_len \
+      --lora_r 8 \
       --factor 7 \
       --enc_in 7 \
       --dec_in 7 \
