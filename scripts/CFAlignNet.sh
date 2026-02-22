@@ -65,6 +65,7 @@ for seq_len in "${seq_len_array[@]}"; do
         --c_out 3 \
         --des 'Exp' \
         --itr 1 \
+        --lora_r 8 \
         --d_model $d_model \
         --d_ff $d_ff \
         --batch_size $batch_size \
