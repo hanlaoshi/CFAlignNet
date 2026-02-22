@@ -62,6 +62,7 @@ for seq_len in "${seq_len_array[@]}"; do
       --dec_in 3 \
       --c_out 3 \
       --des 'Exp' \
+      --lora_r 16 \
       --itr 1 \
       --d_model $d_model \
       --d_ff $d_ff \
